@@ -232,6 +232,7 @@ select {
     display: none;
   }
   &:after {
+    @include transform-rotate(180deg);
     content: "\e90f";
     font-family:'mapVisorIconFont' !important;
     font-size:2rem;
@@ -401,6 +402,9 @@ h3 {
 .text-small {
   font-size:1.2rem;
 }
+.no-active {
+  pointer-events: none;
+}
 .reg-code {
   display: inline-block;
   height:4rem;
@@ -529,6 +533,17 @@ h3 {
     margin:0 2rem 0.5rem 0;
   }
 }
+.ico-holder-abs {
+  position: absolute;
+  right:0;
+  top:50%;
+  margin:-1rem 0 0;
+  font-size:2rem;
+  color: $greyDarkColor;
+  &:hover {
+    color: $hoverGrayIco;
+  }
+}
 .text-medium {
   font-family:$fontmMedium;
 }
@@ -608,7 +623,6 @@ h3 {
     background: #dbdbdb;
     @include box-shadow(0 0 0 rgba(0, 0, 0, 0));
     pointer-events: none;
-    position: relative;
   }
 }
 .landing-page {
@@ -632,6 +646,7 @@ h3 {
 }
 .check-anim + label {
   cursor: pointer;
+  display: inline-block;
 }
 .check-anim:not(checked) {
   position: absolute;
@@ -652,7 +667,7 @@ h3 {
 .check-anim:not(checked) + label:before {
   content: '';
   position: absolute;
-  top: 0;
+  top: 1px;
   left: -1px;
   width: 32px;
   height: 16px;
@@ -666,7 +681,7 @@ h3 {
 .check-anim:not(checked) + label:after {
   content: '';
   position: absolute;
-  top: 2px;
+  top: 3px;
   left: 2px;
   width: 12px;
   height: 12px;
@@ -832,6 +847,9 @@ h3 {
 }
 .minw130 {
   min-width:130px;
+}
+.maxw100 {
+  max-width: 100px;
 }
 .maxw130 {
   max-width: 130px;
@@ -1852,13 +1870,14 @@ input.search {
   background: #fff;
   width: 155px;
   @include box-sizing(border-box);
+  z-index: 2;
   &.text-medium {
     font-family:$fontmMedium;
     font-size:1.4rem;
   }
   &:after {
     right: 100%;
-    top: 20px;
+    top: 2rem;
     border: solid transparent;
     content: " ";
     height: 0;
@@ -2018,11 +2037,11 @@ input.search {
       strong {
         float: left;
         font-family:$fontmMedium;
-        width:80px;
+        width:8rem;
       }
     }
   }
-  .border-sel {
+  .select-custom {
     float: left;
     width: 90px;
     margin:7px 9px 9px 0;
@@ -2030,6 +2049,9 @@ input.search {
     color: $greyDarkColor;
     &:nth-child(3) {
       margin-right: 20px;
+    }
+    select {
+      padding-left: 3px;
     }
   }
 }
@@ -3280,6 +3302,7 @@ label.h30 {
     overflow: hidden;
     display: table;
     width:100%;
+    background: #fff;
     border:1px solid #fff;
     &:after {
       top:1.2rem;
@@ -3542,8 +3565,8 @@ label.h30 {
   @include border-radius(10px);
   font-size:1.6rem;
   position: relative;
-  text-align: center;
   margin:20px 15px;
+  text-align: left;
   .close-popup {
     color: $greyColor;
     position: absolute;
@@ -3561,9 +3584,7 @@ label.h30 {
   h2 {
     font-family:$fontLight;
     font-size:2.2rem;
-    display: inline-block;
     color: $mainColor;
-    border-bottom:3px solid $purpleColor;
     margin:0 0 2rem;
   }
   p {
@@ -3587,6 +3608,11 @@ label.h30 {
 .popup-start {
   width: 470px;
   padding:1.5rem 1rem;
+  text-align: center;
+  h2 {
+    display: inline-block;
+    border-bottom:3px solid $purpleColor;
+  }
   form {
     fieldset {
       width: 290px;
@@ -3615,7 +3641,6 @@ label.h30 {
 }
 .services-popup {
   width:1170px;
-  text-align: left;
   .tab-content {
     padding:4rem 1rem;
   }
@@ -3640,11 +3665,221 @@ label.h30 {
   }
 }
 .add-service-box {
-  background: #fbfbfb;
+  background: $whiteGrayColor;
   padding:5rem 0 4rem;
+  @include border-radius(0px 0px 10px 10px);
+  .col-50 {
+    padding:0 0 0 1.5rem;
+    &:first-child {
+      padding:0 1.5rem 0 0;
+    }
+  }
+  textarea {
+    height: 12rem;
+  }
   .column-holder {
     margin:0 0 5rem;
   }
+  .attent-block.yellow {
+    margin:0 0 3rem;
+  }
+  .add-image {
+    background: #fff;
+  }
+  select {
+    background: $whiteGrayColor;
+  }
+  .maxw250 {
+    width:100%;
+    input {
+      padding:0 18px 4px 0;
+    }
+    .placeholder {
+      left: 4px;
+      bottom: 4px;
+    }
+  }
+}
+.location-popup {
+  width:1170px;
+  h3 {
+    color: $greyDarkColor;
+    font-size:2.2rem;
+    text-transform: uppercase;
+    margin:0 0 1rem;
+    text-align: left;
+  }
+  .location-box form .address-box .map,
+  .location-box form .address-box .map iframe {
+    height:34rem;
+  }
+  select {
+    background: $whiteGrayColor;
+  }
+  .column-holder {
+    margin-bottom:3rem;
+    &:after {
+      display: none;
+    }
+  }
+  .contact-box {
+    @include border-radius(0px 0px 10px 10px);
+  }
+  .input-required .placeholder {
+    left: 0;
+  }
+  .text-center .btn:nth-child(2) {
+    margin-left:1.2rem;
+  }
+  .ico-holder-abs {
+    font-size: 1.6rem;
+    margin:-0.8rem -2rem 0 0;
+  }
+}
+.new-location-popup {
+  width:424px;
+  color: $greyDarkColor;
+  fieldset {
+    display: block;
+    max-width: 350px;
+    margin:0 auto;
+    padding:4rem 1.5rem;
+  }
+  label + .select-custom {
+    margin-top:0.6rem;
+  }
+}
+.add-photo-popup {
+  width: 670px;
+  fieldset {
+    display: block;
+    max-width: 600px;
+    margin:0 auto;
+    padding:1rem 1.5rem 4rem;
+  }
+  .attent-block {
+    margin-bottom:6rem;
+    max-width:550px;
+  }
+  ul {
+    font-size: 0;
+    text-align: center;
+    margin:0 0 3rem;
+    li {
+      display: inline-block;
+      vertical-align: top;
+      width:106px;
+      margin:0 2.1rem 3rem;
+      font-size:2rem;
+      position: relative;
+    }
+  }
+}
+.photo-upload {
+  position: relative;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  border: 1px dashed $greyColor;
+  padding:2px;
+  margin:0 auto 1rem;
+  background: #ebebeb;
+  font-size:2rem;
+  &:before {
+    display: block;
+    content: '';
+    border:2px solid #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+  &:hover {
+    border:1px solid $greenLightColor;
+  }
+  [class^="icon"] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    margin: -1rem 0 0 -1rem;
+    z-index: 1;
+    color: $blueColor;
+  }
+  img {
+    display: block;
+    border: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 4;
+  }
+  input.upload {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width:100%;
+    height:100%;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index:3;
+  }
+}
+.radio-frame {
+  position: relative;
+  width: 14px;
+  margin:0 auto;
+  input {
+    margin: 0;
+    padding: 0;
+  }
+  label {
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    margin: 0;
+    &:after {
+      top: 3px;
+    }
+    &:before {
+      top: 0;
+    }
+  }
+  .tooltip-box {
+    color: $greenLightColor;
+    width: 125px;
+    left: 20px;
+    top: -15px;
+    right:auto;
+    display: none;
+  }
+  &:hover .tooltip-box {
+    display: block;
+  }
+}
+.delete-img,
+.upd-img {
+  font-size:2rem;
+  position: absolute;
+  top:-1rem;
+  right: -1rem;
+  color: $redColor;
+  z-index: 5;
+  span {
+    background: #fff;
+    @include border-radius(2rem);
+  }
+}
+.upd-img {
+  color: $greenLightColor;
+  right: auto;
+  left:-1rem;
 }
 /*.aside-nav {
   display: none;

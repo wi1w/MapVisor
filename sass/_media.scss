@@ -66,8 +66,15 @@
   .col-list.col3 li {
     padding:0 1rem;
   }
+  .location-popup,
   .services-popup {
     width: 800px;
+  }
+  .location-popup {
+    .attent-block {
+      width: auto;
+      margin:0 1.5rem 1.5rem;
+    }
   }
 }
 @media only screen and (max-width: 1160px), only screen and (max-device-width: 1160px) {
@@ -220,6 +227,7 @@
     width:auto;
     margin:0 1.5rem 1rem 0;
   }
+  .location-popup,
   .services-popup {
     width: 700px;
   }
@@ -284,9 +292,9 @@
   .organization-block {
     margin:0 0 3rem;
   }
+  .location-popup,
   .services-popup {
     width: 500px;
-    margin:20px 15px;
   }
   .category-content .column-holder {
     display: block;
@@ -308,6 +316,18 @@
     &:last-child .divider {
       right: 35px;
     }
+  }
+  .add-service-box .col-50 {
+    width:100%;
+    padding: 0;
+    &:first-child {
+      .form-row:last-child {
+        margin-bottom:3rem;
+      }
+    }
+  }
+  .add-photo-popup {
+    width:400px;
   }
 }
 @media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
@@ -406,14 +426,19 @@
   }
 }
 @media only screen and (max-width: 450px), only screen and (max-device-width: 450px) {
+  .add-photo-popup,
   .add-cart-popup {
     width:270px;
+  }
+  .add-photo-popup ul li {
+    margin:0 1rem 3rem;
   }
   .popup .check-anim+label {
     display: block;
   }
 }
 @media only screen and (max-width: 550px), only screen and (max-device-width: 550px) {
+  .location-popup,
   .popup-start {
     width:270px;
     form fieldset {
@@ -527,6 +552,9 @@
     &:last-child .divider {
       right: 33px;
     }
+  }
+  .new-location-popup {
+    width:270px;
   }
 }
 @media only screen and (max-width: 440px), only screen and (max-device-width: 440px) {
