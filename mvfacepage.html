@@ -16,16 +16,13 @@
 <body>
     <div class="wrapper admin-wrapper">
         <header id="header">
-            <h1 class="logo"><a href="#"><img src="images/logo.png" alt=""></a></h1>
-            <input type="checkbox" class="nav-toggle">
-            <a href="#" class="nav-toggle-btn">
-                <span> </span><span> </span><span> </span>
-            </a>
+            <div class="logo-holder">
+                <h1 class="logo"><a href="#"><img src="images/logo.png" alt=""></a></h1>
+            </div><!--.logo-holder-->
             <nav id="nav">
                 <ul>
                     <li><a class="active" href="#">Home</a></li>
                     <li><a href="#">Category</a></li>
-                    <li><a href="#">Location</a></li>
                 </ul>
             </nav><!--#nav-->
             <div class="header-form">
@@ -67,10 +64,10 @@
                 </div>
             </nav><!--.content-nav-->
             <div class="admin-content-holder">
-                <input id="nav-aside-toggle" type="checkbox">
-                <label for="nav-aside-toggle" class="nav-btn-holder">
-                    <span class="icon-ic_menu_black_24px2"></span>
-                </label>
+                <input type="checkbox" class="nav-toggle" id="nav-toggle-aside">
+                <em class="nav-toggle-btn">
+                    <span> </span><span> </span><span> </span>
+                </em>
                 <nav class="aside-nav">
                     <ul>
                         <li>
@@ -113,36 +110,38 @@
                     <div class="content-holder organiztion-holder">
                         <div class="organization-block">
                             <div class="img-holder">
-                                <a href="#"><img class="big" src="images/img-idsclinic.jpg" alt=""></a>
+                                <div class="img-frame">
+                                    <a href="#"><img class="big" src="images/img-idsclinic.jpg" alt=""></a>
+                                    <ul class="action-list">
+                                        <li><a href="#"><span class="icon-ic_create_black_24px"></span></a></li>
+                                        <li><a href="#"><span class="icon-ic_zoom_in_black_24px"></span></a></li>
+                                    </ul>
+                                </div>
                                 <ul>
                                     <li><a href="#"><img src="images/img-small01.jpg" alt=""></a></li>
                                     <li><a href="#"><img src="images/img-small02.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="images/img-small03.jpg" alt=""></a></li>
+                                    <li><a class="add-image" href="#"><span class="icon-ifc_add_circle_black_24px2"></span> <img src="images/img-small01.jpg" alt=""></a></li>
                                 </ul>
                             </div><!--.img-holder-->
                             <div class="info">
                                 <h2>IDS clinic</h2>
                                 <div class="rating-holder">
                                     <fieldset class="rating">
-                                        <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                                        <input checked="checked" type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-                                        <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                                        <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-                                        <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                        <input type="radio" id="star5" name="rating" value="5"><label class="full" for="star5" title="Awesome - 5 stars"></label>
+                                        <input checked="checked" type="radio" id="star4" name="rating" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                                        <input type="radio" id="star3" name="rating" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>
+                                        <input type="radio" id="star2" name="rating" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                                        <input type="radio" id="star1" name="rating" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
                                     </fieldset>
                                 </div><!--.rating-holder-->
 
                                 <ul>
                                     <li>
-                                        <strong>Type:</strong> <span>Medical</span>
-                                        <br><strong>Categories:</strong> <span>Dentistry, Exercise, A.D.D, Alternative Mediicine,Cancer Center</span>
-                                        <br><strong>Season:</strong> <span>All-year</span>
-                                    </li>
-                                    <li>
                                         <p><strong>Date registrations:</strong> 22.08.12</p>
                                         <span class="ico-holder"><span class="icon-ic_location_on_black_24px"></span></span>
                                         <address>
-                                            USA, New-york, zip 5500
-                                            <br>USA, los Angeles zip 5500
+                                            <a href="#">1 Address 5530 Woolsey St #314</a>
                                         </address>
                                     </li>
                                     <li>
@@ -160,13 +159,39 @@
                                     <li>
                                         <span class="ico-holder"><span class="icon-ic_access_time_black_24px"></span></span>
                                         <a href="#">Hours</a>
+                                        <div class="hours-box tooltip-box">
+                                            <ul>
+                                                <li>
+                                                    <strong>Mon</strong> 9:00 am – 5:00
+                                                </li>
+                                                <li>
+                                                    <strong>Tue</strong> 9:00 am – 5:00
+                                                </li>
+                                                <li>
+                                                    <strong>Wed</strong> 9:00 am – 5:00
+                                                </li>
+                                                <li>
+                                                    <strong>Thu</strong> 9:00 am – 5:00
+                                                </li>
+                                                <li>
+                                                    <strong>Fri</strong> 9:00 am – 5:00
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong>Type:</strong> <span>Medical</span>
+                                        <br><strong>Categories:</strong> <span>Dentistry, Exercise, A.D.D, Alternative Mediicine</span>
                                     </li>
                                 </ul>
+                                <div class="text-right">
+                                    <a href="#" class="btn">Edit</a>
+                                </div>
                             </div><!--.info-->
                         </div><!--.organization-block-->
                         <div class="decription-block">
                             <div class="map-box">
-                                <img src="images/img-map-small.jpg" alt="">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48384.10701484486!2d-74.10229838786408!3d40.717869258687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c250d225bfafdd%3A0x249f013a2cd25d9!2z0JTQttC10YDRgdC4LdCh0LjRgtC4LCDQndGM0Y4t0JTQttC10YDRgdC4LCDQodCo0JA!5e0!3m2!1sru!2sua!4v1488734338676" width="600" frameborder="0" style="border:0" allowfullscreen></iframe>
                             </div>
                             <article class="content-box full">
                                 <h3 class="heading"><a href="#">Description</a> <a href="#"><span class="icon-ic_create_black_24px"></span></a></h3>

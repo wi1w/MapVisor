@@ -16,16 +16,13 @@
 <body>
     <div class="wrapper admin-wrapper">
         <header id="header">
-            <h1 class="logo"><a href="#"><img src="images/logo.png" alt=""></a></h1>
-            <input type="checkbox" class="nav-toggle">
-            <a href="#" class="nav-toggle-btn">
-                <span> </span><span> </span><span> </span>
-            </a>
+            <div class="logo-holder">
+                <h1 class="logo"><a href="#"><img src="images/logo.png" alt=""></a></h1>
+            </div><!--.logo-holder-->
             <nav id="nav">
                 <ul>
                     <li><a class="active" href="#">Home</a></li>
                     <li><a href="#">Category</a></li>
-                    <li><a href="#">Location</a></li>
                 </ul>
             </nav><!--#nav-->
             <div class="header-form">
@@ -67,10 +64,10 @@
                 </div>
             </nav><!--.content-nav-->
             <div class="admin-content-holder">
-                <input id="nav-aside-toggle" type="checkbox">
-                <label for="nav-aside-toggle" class="nav-btn-holder">
-                    <span class="icon-ic_menu_black_24px2"></span>
-                </label>
+                <input type="checkbox" class="nav-toggle" id="nav-toggle-aside">
+                <em class="nav-toggle-btn">
+                    <span> </span><span> </span><span> </span>
+                </em>
                 <nav class="aside-nav">
                     <ul>
                         <li>

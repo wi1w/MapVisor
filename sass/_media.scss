@@ -78,13 +78,31 @@
   }
 }
 @media only screen and (max-width: 1160px), only screen and (max-device-width: 1160px) {
-  #header.fixed {
-    position: fixed;
-    top: 0;
-    right: 0;
+  #header {
+    position: relative;
+    z-index:auto;
+    border: none;
+  }
+  .aside-nav {
+    left:-24rem;
+  }
+  #nav-toggle-aside:checked ~ .aside-nav {
     left: 0;
+  }
+  #nav-toggle-aside:not(:checked) ~ .aside-nav {
+    left:-240px;
+  }
+  .logo-holder {
+    position: fixed;
     background: #fff;
+    padding:1.5rem 2rem;
     z-index:1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    width:100%;
+    border-bottom:1px solid $greyColor;
+    /*@include box-shadow(0 1px 4px rgba(0, 0, 0, 0.5));*/
   }
   .header-form,
   #nav {
@@ -93,10 +111,12 @@
     text-align: center;
     padding:1rem 0;
     overflow: hidden;
-    display: none;
   }
-  #header.active .header-form,
-  #header.active #nav,
+  .admin-wrapper .header-form,
+  .header-form {
+    padding: 0;
+    margin: 0;
+  }
   .nav-toggle-btn {
     display: block;
   }
@@ -129,10 +149,6 @@
         opacity: 0;
       }
     }
-    .header-form,
-    #nav {
-      display: block;
-    }
   }
   .nav-toggle:not(:checked) ~ {
     .nav-toggle-btn span {
@@ -143,13 +159,12 @@
       transform: rotate(0deg);
       opacity: 1;
     }
-    .header-form,
-    #nav {
-      display: none;
-    }
   }
   .header-form form {
     padding:8px 1rem 0 0;
+    margin-top: -5px;
+  }
+  .admin-wrapper .header-form form {
     margin-top: 10px;
   }
   .notifications-list {
@@ -159,7 +174,7 @@
     margin:10px 0 0;
   }
   #nav {
-    padding-bottom: 0;
+    padding: 0;
   }
 }
 @media only screen and (max-width: 1050px), only screen and (max-device-width: 1050px) {
@@ -501,6 +516,26 @@
 
 }
 @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+  .admin-wrapper .header-form form {
+    margin: 0;
+  }
+  .header-form form {
+    width:100%;
+    @include box-sizing(border-box);
+    input.search {
+      position: absolute;
+      left: 0;
+      top: 1.2rem;
+      margin: 0;
+    }
+    input[type="text"] {
+      width:100% !important;
+      padding-left:2.8rem;
+    }
+    [class^="icon"] {
+      top: 1.2rem;
+    }
+  }
   .advantage-box {
     height: auto;
     ul li {
@@ -603,23 +638,6 @@
   }
 }
 @media only screen and (max-width: 380px), only screen and (max-device-width: 380px) {
-  .header-form form {
-    width:100%;
-    @include box-sizing(border-box);
-    padding:0 0 10px 30px;
-    input.search {
-      position: absolute;
-      left: 0;
-      top: 6px;
-      margin: 0;
-    }
-    input[type="text"] {
-      width:100% !important;
-    }
-    [class^="icon"] {
-      top: 7px;
-    }
-  }
   .content {
     padding-bottom: 155px;
   }

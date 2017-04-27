@@ -16,16 +16,13 @@
 <body class="popup-active">
     <div class="wrapper admin-wrapper">
         <header id="header">
-            <h1 class="logo"><a href="#"><img src="images/logo.png" alt=""></a></h1>
-            <input type="checkbox" class="nav-toggle">
-            <a href="#" class="nav-toggle-btn">
-                <span> </span><span> </span><span> </span>
-            </a>
+            <div class="logo-holder">
+                <h1 class="logo"><a href="#"><img src="images/logo.png" alt=""></a></h1>
+            </div><!--.logo-holder-->
             <nav id="nav">
                 <ul>
                     <li><a class="active" href="#">Home</a></li>
                     <li><a href="#">Category</a></li>
-                    <li><a href="#">Location</a></li>
                 </ul>
             </nav><!--#nav-->
             <div class="header-form">
@@ -67,10 +64,10 @@
                 </div>
             </nav><!--.content-nav-->
             <div class="admin-content-holder">
-                <input id="nav-aside-toggle" type="checkbox">
-                <label for="nav-aside-toggle" class="nav-btn-holder">
-                    <span class="icon-ic_menu_black_24px2"></span>
-                </label>
+                <input type="checkbox" class="nav-toggle" id="nav-toggle-aside">
+                <em class="nav-toggle-btn">
+                    <span> </span><span> </span><span> </span>
+                </em>
                 <nav class="aside-nav">
                     <ul>
                         <li>
@@ -208,7 +205,7 @@
                         </div><!--.organization-block-->
                         <div class="decription-block">
                             <div class="map-box">
-                                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48384.10701484486!2d-74.10229838786408!3d40.717869258687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c250d225bfafdd%3A0x249f013a2cd25d9!2z0JTQttC10YDRgdC4LdCh0LjRgtC4LCDQndGM0Y4t0JTQttC10YDRgdC4LCDQodCo0JA!5e0!3m2!1sru!2sua!4v1488734338676" width="600" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48384.10701484486!2d-74.10229838786408!3d40.717869258687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c250d225bfafdd%3A0x249f013a2cd25d9!2z0JTQttC10YDRgdC4LdCh0LjRgtC4LCDQndGM0Y4t0JTQttC10YDRgdC4LCDQodCo0JA!5e0!3m2!1sru!2sua!4v1488734338676" width="600" frameborder="0" style="border:0" allowfullscreen></iframe>
                             </div>
                             <article class="content-box full">
                                 <h3 class="heading"><a href="#">Description</a> <a class="fr" href="#"><span class="icon-ic_create_black_24px"></span></a></h3>
@@ -234,7 +231,7 @@
                             <li><a href="#">Products</a></li>
                         </ul>
                     </nav>
-                    <div class="w1170">
+                    <div class="w1170 tabs-box">
                         <div class="attent-block">
                             <span class="icon-attent">
                                 <span class="path1"></span><span class="path2"></span>
@@ -343,8 +340,9 @@
                                 </article><!--.content-box-->
                             </li>
                         </ul><!--.articles-list-->
-                    </div>
-                </div>
+                    </div><!--.tabs-box-->
+                </div><!--.tab-holder-->
+
             </div><!--.admin-content-->
 
 
@@ -1389,8 +1387,8 @@
                                 <input type="file" class="upload" />
                             </div>
                             <div class="radio-frame radio-row">
-                                <input type="radio" value="" id="add-photo-3" name="add-photo-radio">
-                                <label for="add-photo-3"></label>
+                                <input type="radio" value="" id="add-photo-4" name="add-photo-radio">
+                                <label for="add-photo-4"></label>
                                 <span class="tooltip-box">You can use this image by default</span>
                             </div>
                         </li>
