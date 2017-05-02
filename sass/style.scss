@@ -3563,8 +3563,10 @@ label.h30 {
   .content-box {
     margin: 0;
     @include border-radius(10px);
+    @include box-shadow(0 0 0 rgba(0, 0, 0, 0));
     .heading {
       @include border-radius(10px 10px 0px 0px);
+      @include box-shadow(0 0 0 rgba(0, 0, 0, 0));
     }
   }
   .heading {
@@ -3575,6 +3577,7 @@ label.h30 {
 .popup-content {
   padding:3rem 2.3rem 1rem;
 }
+/*popup-start styles*/
 .popup-start {
   width: 470px;
   padding:1.5rem 1rem;
@@ -3599,6 +3602,7 @@ label.h30 {
     }
   }
 }
+/*add-cart-popup styles*/
 .add-cart-popup {
   width:570px;
   @extend .border-box;
@@ -3609,6 +3613,7 @@ label.h30 {
     padding:0.9rem 0 0;
   }
 }
+/*services-popup styles*/
 .services-popup {
   width:1170px;
   .tab-content {
@@ -3634,6 +3639,7 @@ label.h30 {
     }
   }
 }
+/*add service box styles*/
 .add-service-box {
   background: $whiteGrayColor;
   padding:5rem 0 4rem;
@@ -3670,6 +3676,7 @@ label.h30 {
     }
   }
 }
+/*location-popup styles*/
 .location-popup {
   width:1170px;
   h3 {
@@ -3706,6 +3713,7 @@ label.h30 {
     margin:-0.8rem -2rem 0 0;
   }
 }
+/*new-location-popup styles*/
 .new-location-popup {
   width:424px;
   color: $greyDarkColor;
@@ -3719,6 +3727,7 @@ label.h30 {
     margin-top:0.6rem;
   }
 }
+/*add-photo-popup styles*/
 .add-photo-popup {
   width: 670px;
   fieldset {
@@ -3731,17 +3740,23 @@ label.h30 {
     margin-bottom:6rem;
     max-width:550px;
   }
-  ul {
-    font-size: 0;
-    text-align: center;
-    margin:0 0 3rem;
-    li {
-      display: inline-block;
-      vertical-align: top;
-      width:106px;
-      margin:0 2.1rem 3rem;
-      font-size:2rem;
-      position: relative;
+}
+/*registration-popup styles*/
+.registration-popup {
+  width: 770px;
+  fieldset {
+    font-size:1.4rem;
+    display: block;
+    max-width: 380px;
+    margin:0 auto;
+    padding:1rem 1.5rem 3rem;
+  }
+  .attent-block {
+    margin-bottom:2rem;
+    max-width:630px;
+    background: #fceeef;
+    span, >div, .icon-attent .path2:before, .icon-attent .path1:before {
+      color: $redColor;
     }
   }
 }
@@ -3869,16 +3884,7 @@ label.h30 {
   @include transition-duration(0.7s);
   @include transition-timing-function(ease-in);
 }
-/*
-#nav-aside-toggle:checked ~ .aside-nav {
-  left:-240px;
-}
-#nav-aside-toggle:checked ~ .nav-btn-holder {
-  left: 10px;
-}
-#nav-aside-toggle:not(:checked) ~ .aside-nav {
-  left: 0;
-}*/
+
 
 /*.popup-holder {
   display: none;
