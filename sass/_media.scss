@@ -203,9 +203,6 @@
     @include box-sizing(border-box);
     padding:0 1.2rem;
   }
-  .select-custom:after {
-    top: 3px;
-  }
 }
 @media only screen and (max-width: 940px), only screen and (max-device-width: 940px) {
   .targets-box {
@@ -287,9 +284,6 @@
   }
   .col-list.col6 li {
     width:25%;
-  }
-  .select-custom:after {
-    top: 4px;
   }
 }
 @media only screen and (max-width: 750px), only screen and (max-device-width: 750px) {
@@ -580,6 +574,8 @@
   .search-page .footer-form-box {
     padding:5rem 0;
   }
+  .targets-box .form-row>label.select-custom,
+  .targets-box .form-row .jcf-select,
   .targets-box .form-row>label {
     width:100%;
   }
@@ -596,6 +592,9 @@
   }
   .new-location-popup {
     width:270px;
+    .select-custom {
+      width: 150px;
+    }
   }
 }
 @media only screen and (max-width: 440px), only screen and (max-device-width: 440px) {

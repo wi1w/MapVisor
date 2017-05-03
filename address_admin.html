@@ -16,16 +16,13 @@
 <body>
     <div class="wrapper admin-wrapper">
         <header id="header">
-            <h1 class="logo"><a href="#"><img src="images/logo.png" alt=""></a></h1>
-            <input type="checkbox" class="nav-toggle">
-            <a href="#" class="nav-toggle-btn">
-                <span> </span><span> </span><span> </span>
-            </a>
+            <div class="logo-holder">
+                <h1 class="logo"><a href="#"><img src="images/logo.png" alt=""></a></h1>
+            </div><!--.logo-holder-->
             <nav id="nav">
                 <ul>
                     <li><a class="active" href="#">Home</a></li>
                     <li><a href="#">Category</a></li>
-                    <li><a href="#">Location</a></li>
                 </ul>
             </nav><!--#nav-->
             <div class="header-form">
@@ -67,10 +64,10 @@
                 </div>
             </nav><!--.content-nav-->
             <div class="admin-content-holder">
-                <input id="nav-aside-toggle" type="checkbox">
-                <label for="nav-aside-toggle" class="nav-btn-holder">
-                    <span class="icon-ic_menu_black_24px2"></span>
-                </label>
+                <input type="checkbox" class="nav-toggle" id="nav-toggle-aside">
+                <em class="nav-toggle-btn">
+                    <span> </span><span> </span><span> </span>
+                </em>
                 <nav class="aside-nav">
                     <ul>
                         <li>
@@ -141,30 +138,24 @@
                                             <input type="text" id="street" placeholder="Street">
                                         </div>
                                         <div class="form-row pl35 mb20 maxw300">
-                                            <select class="custom-sel" name="">
-                                                <option value="Alabama">Alabama</option>
-                                                <option value="Arizona">Arizona</option>
-                                                <option value="Arkansas">Arkansas</option>
-                                                <option value="Colorado">Colorado</option>
-                                            </select>
-                                            <ul class="drop right minw130">
-                                                <li><a href="#">Alabama</a></li>
-                                                <li><a href="#">Arizona</a></li>
-                                                <li><a href="#">Arkansas</a></li>
-                                                <li><a href="#">Colorado</a></li>
-                                                <li><a href="#">Alabama</a></li>
-                                                <li><a href="#">Arizona</a></li>
-                                                <li><a href="#">Arkansas</a></li>
-                                                <li><a href="#">Colorado</a></li>
-                                            </ul>
+                                            <label class="select-custom">
+                                                <select id="location">
+                                                    <option value="Alabama">Alabama</option>
+                                                    <option value="Arizona">Arizona</option>
+                                                    <option value="Arkansas">Arkansas</option>
+                                                    <option value="Colorado">Colorado</option>
+                                                </select>
+                                            </label>
                                         </div>
                                         <div class="form-row pl30 mb12">
-                                            <select class="border-sel" name="">
-                                                <option value="Area of service">Area of service</option>
-                                                <option value="value 1">value 1</option>
-                                                <option value="value 2">value 2</option>
-                                                <option value="value 3">value 3</option>
-                                            </select>
+                                            <label class="select-custom w190 fl mr10 mb20">
+                                                <select>
+                                                    <option value="Area of service">Area of service</option>
+                                                    <option value="value 1">value 1</option>
+                                                    <option value="value 2">value 2</option>
+                                                    <option value="value 3">value 3</option>
+                                                </select>
+                                            </label>
                                             <div class="radio-holder">
                                                 <div class="radio-row mb12">
                                                     <input type="radio" value="Small" id="area-small" name="area-size">
@@ -417,5 +408,12 @@
             </ul>
         </nav><!--#footer-nav-->
     </footer><!-- .footer -->
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jcf.js"></script>
+    <script src="js/jcf.angular.js"></script>
+    <script src="js/jcf.select.js"></script>
+    <script src="js/jcf.scrollable.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
