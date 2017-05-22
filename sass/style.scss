@@ -138,7 +138,17 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 textarea:focus, input:focus {
   outline: none;
 }
-input[type="text"], input[type="email"],
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: inset 0 0 0 1000px #fff !important;
+  -webkit-text-fill-color: #000 !important;
+  color: #000 !important;
+}
+input[type="button"] {
+  cursor: pointer;
+}
+input[type="text"], input[type="email"], input[type="password"],
 .custom-sel {
   border: none;
   outline: none;
@@ -153,7 +163,7 @@ input[type="text"], input[type="email"],
   background-size: 0 2px, 100% 1px;
   background-repeat: no-repeat;
   background-position: center bottom, center calc(100% - 1px);
-  background-color: transparent;
+  background-color: #fff !important;
   transition: background 0s ease-out;
   float: none;
   box-shadow: none;
@@ -552,6 +562,8 @@ h3 {
   line-height:4rem;
   padding:0 2rem;
   background: $greenColor;
+  border: none;
+  cursor: pointer;
   &.blue-btn {
     background: $blueColor;
   }
@@ -564,6 +576,7 @@ h3 {
     @extend .shadow-blur;
     color: #fff;
   }
+  &[disabled],
   &.no-active {
     background: #dbdbdb;
     @include box-shadow(0 0 0 rgba(0, 0, 0, 0));
@@ -798,6 +811,15 @@ h3 {
 .w190 {
   width:19rem;
 }
+.w200 {
+  width:20rem;
+}
+.w250 {
+  width:25rem;
+}
+.w300 {
+  width:30rem;
+}
 .minw130 {
   min-width:130px;
 }
@@ -812,6 +834,9 @@ h3 {
 }
 .maxw170 {
   max-width: 170px;
+}
+.maxw200 {
+  max-width: 200px;
 }
 .maxw250 {
   max-width: 250px;
@@ -1853,12 +1878,16 @@ input.search {
 .error-row .icon-error {
   display: block;
 }
-.sucess-row input[type="text"] {
+.sucess-row input[type="text"],
+.sucess-row input[type="password"],
+.sucess-row input[type="email"] {
   background-image: linear-gradient($greenLightColor, $greenLightColor), linear-gradient($borderColor, $borderColor);
   background-size: 100% 2px, 100% 1px;
   box-shadow: none;
 }
-.error-row input[type="text"] {
+.error-row input[type="text"],
+.error-row input[type="password"],
+.error-row input[type="email"] {
   background-image: linear-gradient($redColor, $redColor), linear-gradient($borderColor, $borderColor);
   background-size: 100% 2px, 100% 1px;
   box-shadow: none;
@@ -3137,11 +3166,16 @@ label.h30 {
         bottom: 0;
         right: 0;
         left: 0;
+        color: $greyColor;
+      }
+      input:hover ~ [class^="icon"] {
+        color: $greyDarkColor;
       }
     }
   }
   .holder-item {
     display: inline-block;
+    cursor: pointer;
     span {
       @extend .vertical-align;
     }
@@ -3236,6 +3270,7 @@ label.h30 {
   }
   .action-link {
     color: $greyColor;
+    cursor: pointer;
     &:hover {
       color: $greyDarkColor;
     }
@@ -3728,6 +3763,34 @@ label.h30 {
     }
   }
 }
+/*add-cart-popup styles*/
+.error-popup {
+  width:430px;
+  @extend .border-box;
+  .popup-content {
+    padding:1rem 3rem 4rem;
+  }
+  .text-holder {
+    margin:0 0 3rem;
+    position: relative;
+    padding:0 0 0 7rem;
+    >[class^="icon"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .icon-err {
+      width: 5rem;
+      height:5rem;
+      line-height:5rem;
+      text-align: center;
+      background: $redColor;
+      color: #fff;
+      font-size:4rem;
+      @include border-radius(50%);
+    }
+  }
+}
 .photo-upload {
   position: relative;
   overflow: hidden;
@@ -3882,6 +3945,17 @@ label.h30 {
   right: 0;
   top: 100%;
   z-index:10000;
+}
+.drop-bg {
+  display: block;
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index:9000;
 }
 body > .jcf-select-drop,
 .drop {
