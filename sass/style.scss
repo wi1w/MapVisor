@@ -76,7 +76,7 @@ body {
   background: #fff;
   color:$mainColor;
   min-width: 320px;
-  padding: 0;
+  padding: 8rem 0 0;
 }
 html, body {
   height:100%;
@@ -770,7 +770,6 @@ h3 {
   height: auto !important;
   height: 100%;
   overflow: hidden;
-  padding:8rem 0 0;
   @extend .border-box;
 }
 .blur-styles {
@@ -1188,7 +1187,7 @@ input.search {
 }
 /* organization-block styles
 -----------------------------------------------------------------------------*/
-.decription-block,
+.description-block,
 .organization-block {
   float: left;
   @extend .border-box;
@@ -1213,6 +1212,14 @@ input.search {
   .img-frame {
     position: relative;
     margin:0 0 1rem;
+    >a {
+      @include background-size(cover);
+      background-position: 50% 50%;
+      display: block;
+      img {
+        opacity: 0;
+      }
+    }
     .action-list {
       display: none;
       position: absolute;
@@ -1294,16 +1301,17 @@ input.search {
         a {
           display: block;
           position: relative;
+          @include background-size(cover);
+          background-position: 50% 50%;
+          &.add-image {
+            background: none;
+          }
         }
         img {
           width: 100%;
           display: block;
+          opacity: 0;
         }
-      }
-    }
-    .add-image {
-      img {
-        opacity: 0;
       }
     }
     .btn {
@@ -1444,6 +1452,7 @@ input.search {
         color: $borderColor;
       }
       &.fr {
+        cursor: pointer;
         float: right;
         margin:0 -10px 0 8px;
       }
@@ -1553,7 +1562,7 @@ input.search {
     }
   }
 }
-.decription-block {
+.description-block {
   float: right;
   padding:0 0 0 1.5rem;
 }
@@ -1995,6 +2004,9 @@ input.search {
   background: $whiteGrayColor;
   padding:4rem 0 2rem;
   @include border-radius(0 0 5px 5px);
+  input[type="text"], input[type="email"], input[type="password"], .custom-sel {
+    background-color: transparent !important;
+  }
   .column-holder {
     position: relative;
     .col-50 {
@@ -2194,13 +2206,58 @@ input.search {
 .admin-content .content-nav {
   border: none;
 }
-.decription-block {
+.description-block {
+  .heading {
+    height: 4rem;
+    line-height:4rem;
+    padding:0.2rem 2rem;
+  }
   .map-box {
     height:24rem;
     margin:0 0 2rem;
     img {
       display: block;
       width:100%;
+    }
+  }
+  .text-frame {
+    form {
+      display: none;
+    }
+  }
+  &.active {
+    .map-box {
+      display: none;
+    }
+    .text-frame {
+      height: auto;
+      overflow: visible;
+      p {
+        display: none;
+      }
+    }
+    .text-holder {
+      margin:0 0 7rem;
+    }
+    form {
+      display: block;
+      height: 28rem;
+      position: relative;
+      &:after {
+        @extend .after-clear;
+      }
+      .btn {
+        position: absolute;
+        right: 0;
+        bottom:-10.5rem;
+      }
+    }
+    textarea {
+      resize: none;
+      text-align: left;
+      border: none;
+      max-width:100% !important;
+      font-size: 1.6rem;
     }
   }
 }
@@ -3634,6 +3691,9 @@ label.h30 {
   background: $whiteGrayColor;
   padding:5rem 0 4rem;
   @include border-radius(0px 0px 10px 10px);
+  input[type="text"], input[type="email"], input[type="password"], .custom-sel {
+    background-color: transparent !important;
+  }
   .col-50 {
     padding:0 0 0 1.5rem;
     &:first-child {

@@ -13,43 +13,42 @@
     </style>
     <![endif]-->
 </head>
-<body class="popup-active">
+<body class="">
+    <header id="header">
+        <div class="logo-holder">
+            <h1 class="logo"><a href="#"><img src="images/logo.png" alt=""></a></h1>
+        </div><!--.logo-holder-->
+        <nav id="nav">
+            <ul>
+                <li><a class="active" href="#">Home</a></li>
+                <li><a href="#">Category</a></li>
+            </ul>
+        </nav><!--#nav-->
+        <div class="header-form">
+            <form action="#">
+                <fieldset>
+                    <input class="search" type="submit" value="">
+                    <span class="icon-Icon-48"></span>
+                    <input type="text">
+                </fieldset>
+            </form>
+            <ul class="notifications-list">
+                <li><a href="#"><span class="icon-ic_person_black_24px"></span></a></li>
+                <li><a href="#"><span class="icon-ic_notifications_black_24px2"></span></a></li>
+                <li><a href="#"><span class="icon-ic_email_black_24px2"></span></a></li>
+            </ul>
+            <ul class="user-log-list">
+                <li>
+                    <a class="user-photo" href="#">
+                        <img src="images/img-small02.jpg" alt="">
+                        <span>Smile clinic Idd</span>
+                    </a>
+                </li>
+                <li><a href="#"><span class="icon-ic_input_black_24px"></span></a></li>
+            </ul>
+        </div><!--.header-form-->
+    </header><!--#header-->
     <div class="wrapper admin-wrapper">
-        <header id="header">
-            <div class="logo-holder">
-                <h1 class="logo"><a href="#"><img src="images/logo.png" alt=""></a></h1>
-            </div><!--.logo-holder-->
-            <nav id="nav">
-                <ul>
-                    <li><a class="active" href="#">Home</a></li>
-                    <li><a href="#">Category</a></li>
-                </ul>
-            </nav><!--#nav-->
-            <div class="header-form">
-                <form action="#">
-                    <fieldset>
-                        <input class="search" type="submit" value="">
-                        <span class="icon-Icon-48"></span>
-                        <input type="text">
-                    </fieldset>
-                </form>
-                <ul class="notifications-list">
-                    <li><a href="#"><span class="icon-ic_person_black_24px"></span></a></li>
-                    <li><a href="#"><span class="icon-ic_notifications_black_24px2"></span></a></li>
-                    <li><a href="#"><span class="icon-ic_email_black_24px2"></span></a></li>
-                </ul>
-                <ul class="user-log-list">
-                    <li>
-                        <a class="user-photo" href="#">
-                            <img src="images/img-small02.jpg" alt="">
-                            <span>Smile clinic Idd</span>
-                        </a>
-                    </li>
-                    <li><a href="#"><span class="icon-ic_input_black_24px"></span></a></li>
-                </ul>
-            </div><!--.header-form-->
-        </header><!--#header-->
-
         <main class="content admin-content">
             <nav class="content-nav">
                 <div class="w1170">
@@ -132,7 +131,7 @@
                                     </ul>
                                 </div>
                                 <ul>
-                                    <li><a href="#"><img src="images/img-small01.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="images/img-small-100-60.jpg" alt=""></a></li>
                                     <li><a href="#"><img src="images/img-small02.jpg" alt=""></a></li>
                                     <li><a href="#"><img src="images/img-small03.jpg" alt=""></a></li>
                                     <li><a class="add-image" href="#"><span class="icon-ifc_add_circle_black_24px2"></span> <img src="images/img-small01.jpg" alt=""></a></li>
@@ -203,7 +202,7 @@
                                 </div>
                             </div><!--.info-->
                         </div><!--.organization-block-->
-                        <div class="decription-block">
+                        <div class="description-block">
                             <div class="map-box">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48384.10701484486!2d-74.10229838786408!3d40.717869258687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c250d225bfafdd%3A0x249f013a2cd25d9!2z0JTQttC10YDRgdC4LdCh0LjRgtC4LCDQndGM0Y4t0JTQttC10YDRgdC4LCDQodCo0JA!5e0!3m2!1sru!2sua!4v1488734338676" width="600" frameborder="0" style="border:0" allowfullscreen></iframe>
                             </div>
@@ -211,6 +210,12 @@
                                 <h3 class="heading"><a href="#">Description</a> <a class="fr" href="#"><span class="icon-ic_create_black_24px"></span></a></h3>
                                 <div class="text-holder">
                                     <div class="text-frame">
+                                        <form action="#">
+                                            <div class="form-row">
+                                                <textarea name="" id="" cols="30" rows="10">Full description: aliquando similique eam, duo movet putant scripta an. Id sea aliquid... phaedrum, tale dicant inermis te mel. Te congue diceret duo, mei solum verterem antiopam te, vim at paulo graeci argumentum. An sed illud ...   qualisque, summo audire tincidunt mea cu. Ius te ornatus tacimates hendrerit.</textarea>
+                                            </div>
+                                            <input type="submit" class="btn blue-btn fr" value="Edit">
+                                        </form>
                                         <p>
                                             Full description:
                                             <br>Our clinic was established in 1977 and since than was providing outstanding care for families of East Bay. We have general dentistry, surgeon, ortho-dentist and laboratory that ….
@@ -220,7 +225,111 @@
                                 </div>
                             </article><!--.content-box-->
 
-                        </div><!--.decription-block-->
+                        </div><!--.description-block-->
+                    </div>
+                    <div class="content-holder organiztion-holder">
+                        <div class="organization-block">
+                            <div class="img-holder">
+                                <div class="img-frame">
+                                    <a href="#" style="background-image: url(images/img-idsclinic.jpg);"><img class="big" src="images/img-idsclinic.jpg" alt=""></a>
+                                    <ul class="action-list">
+                                        <li><a href="#"><span class="icon-ic_create_black_24px"></span></a></li>
+                                        <li><a href="#"><span class="icon-ic_zoom_in_black_24px"></span></a></li>
+                                    </ul>
+                                </div>
+                                <ul>
+                                    <li><a href="#" style="background-image: url(images/img-small-40-80.jpg);"><img src="images/img-small01.jpg" alt=""></a></li>
+                                    <li><a href="#" style="background-image: url(images/img-small-60-100.jpg);"><img src="images/img-small01.jpg" alt=""></a></li>
+                                    <li><a href="#" style="background-image: url(images/img-small-100-60.jpg);"><img src="images/img-small01.jpg" alt=""></a></li>
+                                    <li><a class="add-image" href="#"><span class="icon-ifc_add_circle_black_24px2"></span> <img src="images/img-small01.jpg" alt=""></a></li>
+                                </ul>
+                            </div><!--.img-holder-->
+                            <div class="info">
+                                <h2>IDS clinic</h2>
+                                <div class="rating-holder">
+                                    <fieldset class="rating">
+                                        <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                        <input checked="checked" type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                        <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                        <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                        <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                    </fieldset>
+                                </div><!--.rating-holder-->
+
+                                <ul>
+                                    <li>
+                                        <p><strong>Date registrations:</strong> 22.08.12</p>
+                                        <span class="ico-holder"><span class="icon-ic_location_on_black_24px"></span></span>
+                                        <address>
+                                            <a href="#">1 Address 5530 Woolsey St #314</a>
+                                        </address>
+                                    </li>
+                                    <li>
+                                        <span class="ico-holder"><span class="icon-ic_phone_black_24px"></span></span>
+                                        <a href="tel:+7101952555556">1-952-555-556</a>
+                                    </li>
+                                    <li>
+                                        <span class="ico-holder"><span class="icon-ic_public_black_24px"></span></span>
+                                        <a href="#" target="_blank">www.blabla.com</a>
+                                    </li>
+                                    <li>
+                                        <span class="ico-holder"><span class="icon-ic_email_black_24px"></span></span>
+                                        <a href="mailto:blabla@gmail.com">blabla@gmail.com</a>
+                                    </li>
+                                    <li>
+                                        <span class="ico-holder"><span class="icon-ic_access_time_black_24px"></span></span>
+                                        <a href="#">Hours</a>
+                                        <div class="hours-box tooltip-box">
+                                            <ul>
+                                                <li>
+                                                    <strong>Mon</strong> 9:00 am – 5:00
+                                                </li>
+                                                <li>
+                                                    <strong>Tue</strong> 9:00 am – 5:00
+                                                </li>
+                                                <li>
+                                                    <strong>Wed</strong> 9:00 am – 5:00
+                                                </li>
+                                                <li>
+                                                    <strong>Thu</strong> 9:00 am – 5:00
+                                                </li>
+                                                <li>
+                                                    <strong>Fri</strong> 9:00 am – 5:00
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong>Type:</strong> <span>Medical</span>
+                                        <br><strong>Categories:</strong> <span>Dentistry, Exercise, A.D.D, Alternative Mediicine</span>
+                                    </li>
+                                </ul>
+                                <div class="text-right">
+                                    <!--<a href="#" class="btn">Edit</a>-->
+                                    <input type="button" class="btn" value="Edit">
+                                </div>
+                            </div><!--.info-->
+                        </div><!--.organization-block-->
+                        <div class="description-block active">
+                            <div class="map-box">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48384.10701484486!2d-74.10229838786408!3d40.717869258687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c250d225bfafdd%3A0x249f013a2cd25d9!2z0JTQttC10YDRgdC4LdCh0LjRgtC4LCDQndGM0Y4t0JTQttC10YDRgdC4LCDQodCo0JA!5e0!3m2!1sru!2sua!4v1488734338676" width="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                            <article class="content-box">
+                                <h3 class="heading"><a href="#">Description</a> <a class="fr" href="#"><span class="icon-ic_create_black_24px"></span></a></h3>
+                                <div class="text-holder">
+                                    <div class="text-frame">
+                                        <p>Full description: aliquando similique eam, duo movet putant scripta an. Id sea aliquid... phaedrum, tale dicant inermis te mel. Te congue diceret duo, mei solum verterem antiopam te, vim at paulo graeci argumentum. An sed illud ...   qualisque, summo audire tincidunt mea cu. Ius te ornatus tacimates hendrerit.</p>
+                                        <form action="#">
+                                            <div class="form-row">
+                                                <textarea name="" id="" cols="30" rows="10">Full description: aliquando similique eam, duo movet putant scripta an. Id sea aliquid... phaedrum, tale dicant inermis te mel. Te congue diceret duo, mei solum verterem antiopam te, vim at paulo graeci argumentum. An sed illud ...   qualisque, summo audire tincidunt mea cu. Ius te ornatus tacimates hendrerit.</textarea>
+                                            </div>
+                                            <input type="submit" class="btn blue-btn fr" value="Edit">
+                                        </form>
+                                    </div>
+                                </div>
+                            </article><!--.content-box-->
+
+                        </div><!--.description-block-->
                     </div><!--.content-holder-->
                 </div><!--.w1170-->
 
@@ -238,7 +347,7 @@
                             </span>
                             <span>You can personalize every card you select to show a unique quality that you offer.  Personalization allows you to effectively compete and target your clients effectively!</span>
                             <span class="btn-holder">
-                                <a href="#" class="btn">Add</a>
+                                <input type="button" class="btn" value="Add">
                             </span>
                         </div><!--.attent-block-->
 
@@ -382,8 +491,8 @@
             </ul>
         </nav><!--#footer-nav-->
     </footer><!-- .footer -->
-    <div class="popup-holder">
-        <div class="popup add-cart-popup">
+    <!--<div class="popup-holder">
+        &lt;!&ndash;<div class="popup add-cart-popup">
             <form action="#">
                 <fieldset>
                     <article class="content-box">
@@ -461,14 +570,14 @@
                                 <a href="#" class="fl mt10"><span class="icon-ic_rate_review_black_24px"></span></a>
                                 <a href="#" class="btn fr no-active">Save</a>
                             </footer>
-                        </div><!--.popup-content-->
+                        </div>&lt;!&ndash;.popup-content&ndash;&gt;
                     </article>
                 </fieldset>
             </form>
             <a href="#" class="close-popup" title="close popup"><span class="icon-ic_close_black_24px_1_2"></span></a>
-        </div><!--.add-cart-popup-->
+        </div>&ndash;&gt;&lt;!&ndash;.add-cart-popup&ndash;&gt;
 
-        <!--<div class="popup services-popup">
+        &lt;!&ndash;<div class="popup services-popup">
             <article class="content-box tab-box">
                 <h2 class="heading text-upper">Services</h2>
                 <form action="#">
@@ -771,9 +880,9 @@
                 </form>
             </article>
             <a href="#" class="close-popup" title="close popup"><span class="icon-ic_close_black_24px_1_2"></span></a>
-        </div>--><!--.services-popup-->
+        </div>&ndash;&gt;&lt;!&ndash;.services-popup&ndash;&gt;
 
-        <!--<div class="popup services-popup">
+        &lt;!&ndash;<div class="popup services-popup">
             <article class="content-box tab-box">
                 <h2 class="heading text-upper">Services</h2>
                 <form action="#">
@@ -1166,9 +1275,9 @@
                 </form>
             </article>
             <a href="#" class="close-popup" title="close popup"><span class="icon-ic_close_black_24px_1_2"></span></a>
-        </div>--><!--.services-popup.add-service-->
+        </div>&ndash;&gt;&lt;!&ndash;.services-popup.add-service&ndash;&gt;
 
-        <!--<div class="popup location-popup">
+        &lt;!&ndash;<div class="popup location-popup">
             <article class="content-box location-box">
                 <h2 class="heading text-upper">Location</h2>
                 <div class="attent-block w970">
@@ -1291,9 +1400,9 @@
                 </form>
             </article>
             <a href="#" class="close-popup" title="close popup"><span class="icon-ic_close_black_24px_1_2"></span></a>
-        </div>--><!--.location-popup-->
+        </div>&ndash;&gt;&lt;!&ndash;.location-popup&ndash;&gt;
 
-        <!--<div class="popup new-location-popup">
+        <div class="popup new-location-popup">
             <div class="content-box">
                 <h2 class="heading text-upper">New location</h2>
             </div>
@@ -1330,9 +1439,9 @@
                 </fieldset>
             </form>
             <a href="#" class="close-popup" title="close popup"><span class="icon-ic_close_black_24px_1_2"></span></a>
-        </div>--><!--.new-location-popup-->
+        </div>&lt;!&ndash;.new-location-popup&ndash;&gt;
 
-        <!--<div class="popup add-photo-popup">
+        &lt;!&ndash;<div class="popup add-photo-popup">
             <div class="content-box">
                 <h2 class="heading text-upper">Add photo</h2>
             </div>
@@ -1399,9 +1508,9 @@
                 </fieldset>
             </form>
             <a href="#" class="close-popup" title="close popup"><span class="icon-ic_close_black_24px_1_2"></span></a>
-        </div>--><!--.add-photo-popup-->
+        </div>&ndash;&gt;&lt;!&ndash;.add-photo-popup&ndash;&gt;
 
-    </div><!--.popup-holder-->
+    </div>--><!--.popup-holder-->
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/jcf.js"></script>
