@@ -3585,6 +3585,7 @@ label.h30 {
   margin:20px 15px;
   text-align: left;
   .close-popup {
+    cursor: pointer;
     color: $greyColor;
     position: absolute;
     font-size: 24px;
