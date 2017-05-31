@@ -76,6 +76,16 @@
       margin:0 1.5rem 1.5rem;
     }
   }
+  .popup-holder {
+    .hours-box ul li {
+      .check-anim+label {
+        width:100%;
+      }
+      .select-custom:last-child {
+        margin-bottom:2.5rem;
+      }
+    }
+  }
 }
 @media only screen and (max-width: 1160px), only screen and (max-device-width: 1160px) {
   #header {
@@ -102,7 +112,6 @@
     right: 0;
     width:100%;
     border-bottom:1px solid $greyColor;
-    /*@include box-shadow(0 1px 4px rgba(0, 0, 0, 0.5));*/
   }
   .header-form,
   #nav {
@@ -202,6 +211,16 @@
     width:33.3%;
     @include box-sizing(border-box);
     padding:0 1.2rem;
+  }
+}
+@media only screen and (max-width: 960px), only screen and (max-device-width: 960px) {
+  .hours-box ul li {
+    .check-anim+label {
+      width:100%;
+    }
+    .select-custom:last-child {
+      margin-bottom:2.5rem;
+    }
   }
 }
 @media only screen and (max-width: 940px), only screen and (max-device-width: 940px) {
@@ -433,6 +452,14 @@
       left:-250px;
     }
   }
+  .hours-box ul li {
+    .check-anim+label {
+      width:auto;
+    }
+    .select-custom:last-child {
+      margin-bottom:1rem;
+    }
+  }
 }
 @media only screen and (max-width: 630px), only screen and (max-device-width: 630px) {
   .add-cart-popup {
@@ -595,6 +622,14 @@
     width:270px;
     .select-custom {
       width: 150px;
+    }
+  }
+  .hours-box ul li {
+    .check-anim+label {
+      width:100%;
+    }
+    .select-custom:last-child {
+      margin-bottom:3rem;
     }
   }
 }
