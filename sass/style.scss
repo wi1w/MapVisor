@@ -1213,11 +1213,10 @@ input.search {
     position: relative;
     margin:0 0 1rem;
     >a {
-      @include background-size(cover);
-      background-position: 50% 50%;
-      display: block;
       img {
-        opacity: 0;
+        display: block;
+        width:100%;
+        max-width:232px;
       }
     }
     .action-list {
@@ -1301,16 +1300,18 @@ input.search {
         a {
           display: block;
           position: relative;
-          @include background-size(cover);
-          background-position: 50% 50%;
           &.add-image {
             background: none;
+            img {
+              opacity: 0;
+            }
           }
         }
         img {
           width: 100%;
           display: block;
-          opacity: 0;
+          max-height: 50px;
+          max-width: 50px;
         }
       }
     }
@@ -1387,8 +1388,8 @@ input.search {
   top:100%;
   right:auto;
   left: 0;
-  width:23rem;
-  padding:0 3rem;
+  width:26rem;
+  padding:0 2.5rem;
   @include box-shadow(0 0 10px rgba(26, 23, 27, 0.5));
   @include border-radius(5px);
   z-index: 1;
@@ -1408,9 +1409,12 @@ input.search {
   }
   ul {
     margin: 0;
+    padding:1rem 0;
     li {
+      margin:0 0 0.5rem;
       &:last-child {
         border: none;
+        margin: 0;
       }
       strong {
         width:5.6rem;
@@ -3560,6 +3564,7 @@ label.h30 {
 }
 /* popup styles
 -----------------------------------------------------------------------------*/
+.error-popup-holder,
 .popup-holder {
   overflow-x: hidden;
   overflow-y: auto;
@@ -3842,9 +3847,13 @@ label.h30 {
   }
 }
 /*add-cart-popup styles*/
+.error-popup-holder {
+  z-index:1001;
+}
 .error-popup {
   width:430px;
   @extend .border-box;
+  z-index:2;
   .popup-content {
     padding:1rem 3rem 4rem;
   }
