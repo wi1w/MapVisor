@@ -3274,10 +3274,20 @@ label.h30 {
       }
     }
   }
-  .filter-list-outer {
+  .filter-list-holder {
     padding:1.5rem 0.7rem;
     >li {
-      font-size:2.2rem;
+      font-size:2.8rem;
+      font-family:$fontmMedium;
+      .icon-plus {
+        font-size:1.6rem;
+      }
+    }
+  }
+  .filter-list-outer {
+    padding:0.5rem 0.7rem 0.5rem 1.2rem;
+    >li {
+      font-size:2rem;
       font-family:$fontmMedium;
       .icon-plus {
         font-size:1.6rem;
