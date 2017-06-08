@@ -1310,6 +1310,9 @@ input.search {
           width: 100%;
           display: block;
         }
+        >* {
+          cursor: pointer;
+        }
       }
     }
     .btn {
@@ -3259,8 +3262,7 @@ label.h30 {
       margin:0 0 1rem;
     }
     >li {
-      font-size:1.6rem;
-      font-family:$fontLight;
+      font:1.6rem $fontLight;
       ul {
         display: none;
       }
@@ -3273,41 +3275,58 @@ label.h30 {
         content: "\f068";
       }
     }
+    li {
+      margin:0.5rem 0 0;
+      &:first-child {
+        margin: 0;
+      }
+    }
   }
-  .filter-list-holder {
+  .filter-list-holder,
+  .filter-list-outer {
     padding:1.5rem 0.7rem;
     >li {
-      font-size:2.8rem;
-      font-family:$fontmMedium;
+      font:1.6rem $fontLight;
       .icon-plus {
         font-size:1.6rem;
+      }
+      >ul {
+        display: none;
+      }
+    }
+    >li.active {
+      >ul {
+        display: block;
+      }
+      >a .icon-plus:before {
+        content: "\f068";
+      }
+    }
+    li {
+      margin:1rem 0 0;
+      &:first-child {
+        margin: 0;
       }
     }
   }
   .filter-list-outer {
-    padding:0.5rem 0.7rem 0.5rem 1.2rem;
-    >li {
-      font-size:2rem;
-      font-family:$fontmMedium;
-      .icon-plus {
-        font-size:1.6rem;
-      }
-      ul {
-        display: none;
-      }
-    }
-    li.active {
-      ul {
-        display: block;
-      }
-      .icon-plus:before {
-        content: "\f068";
-      }
-    }
+    padding:1rem 0.7rem 1rem 2.3rem;
     .filter-list-inner {
-      padding:0.5rem 0 0.5rem 2rem;
+      padding:1rem 0 1rem 2rem;
     }
   }
+}
+.icon-folder {
+  background: url(../images/ico-folder-close.svg) no-repeat;
+  display: inline-block;
+  width:20px;
+  height: 20px;
+  -webkit-background-size:20px 20px;
+  background-size:20px 20px;
+  margin:-1px 0 0;
+}
+.active .icon-folder {
+  background-image: url(../images/ico-folder-open.svg);
 }
 .org-box {
   color: #000;
@@ -3886,6 +3905,7 @@ label.h30 {
   }
 }
 .photo-upload {
+  cursor: pointer;
   position: relative;
   overflow: hidden;
   width: 100px;
@@ -3981,6 +4001,7 @@ label.h30 {
   right: -1rem;
   color: $redColor;
   z-index: 5;
+  cursor: pointer;
   span {
     background: #fff;
     @include border-radius(2rem);
@@ -4025,6 +4046,12 @@ label.h30 {
   font-size:1.4rem;
   font-family:$fontLight;
   line-height:2.8rem;
+  @extend .border-box;
+  overflow: hidden;
+  display: block;
+  max-width:100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .jcf-select .jcf-select-opener {
   background: none;
