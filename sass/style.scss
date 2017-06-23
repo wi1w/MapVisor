@@ -429,6 +429,8 @@ h3 {
 }
 .tag-cloud {
   font-size: 0;
+  height:9rem;
+  overflow: hidden;
   li {
     display: inline-block;
     vertical-align: top;
