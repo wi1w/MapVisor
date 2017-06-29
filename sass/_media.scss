@@ -263,6 +263,12 @@
   .services-popup {
     width: 700px;
   }
+  .col-list.col6 li {
+    width:25%;
+  }
+  .col-list.col4 li {
+    width:33.3%;
+  }
 }
 @media only screen and (max-width: 800px), only screen and (max-device-width: 800px) {
   html {
@@ -300,9 +306,6 @@
   }
   .find-pros-box {
     height: auto;
-  }
-  .col-list.col6 li {
-    width:25%;
   }
 }
 @media only screen and (max-width: 750px), only screen and (max-device-width: 750px) {
@@ -390,6 +393,9 @@
   }
   .col-list.col3 li {
     width:100%;
+  }
+  .col-list.col4 li {
+    width:50%;
   }
 }
 @media only screen and (max-width: 600px), only screen and (max-device-width: 600px) {
@@ -676,6 +682,10 @@
     .btn {
       padding:0 3rem;
     }
+  }
+  .col-list.col6 li,
+  .col-list.col4 li {
+    width:100%;
   }
 }
 @media only screen and (max-width: 380px), only screen and (max-device-width: 380px) {

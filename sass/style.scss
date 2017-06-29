@@ -2757,6 +2757,9 @@ input.search {
   &.col3 li {
     width:33.333%;
   }
+  &.col4 li {
+    width:25%;
+  }
   &.col6 li {
     width:16.666%;
   }
@@ -2765,6 +2768,12 @@ input.search {
 .landing-articles {
   padding:6rem 0;
   text-align: center;
+  &.add {
+    padding:4rem 0;
+    .position-box {
+      margin: 0;
+    }
+  }
   .heading-h3 {
     max-width: 74rem;
   }
@@ -2928,23 +2937,59 @@ input.search {
     padding:0 4rem;
   }
 }
-.landing-page .col-list.col6 {
+.landing-page .col-list.col6,
+.landing-page .col-list.col4 {
   text-align: left;
   margin:0 0 2.5rem -1px;
+  overflow: hidden;
   li {
     font-size:1.6rem;
     line-height:2rem;
     padding:0 1rem;
-    border-left:1px solid $greyColor;
+    position: relative;
+    &:before {
+      display: block;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1px;
+      background: $greyColor;
+      height:1000px;
+    }
   }
 }
-
+.find-pros-box,
+.footer-form-box {
+  .col-list.col6 li:before {
+    background: #fff;
+  }
+}
 .search-page {
+  .heading-h3 {
+    margin:0 0 2.5rem;
+  }
+  .subcategory-box,
   .popular-location-box {
     background: #fbfbfb;
     padding:4rem 0;
     a {
       color: #000;
+    }
+  }
+  .subcategory-box {
+    text-align: center;
+    .maxw1200 {
+      overflow: hidden;
+    }
+    a {
+      color: $blueColor;
+      &:hover {
+        color: $purpleColor;
+      }
+      &.text-upper {
+        text-decoration: underline;
+      }
     }
   }
   .footer-form-box {
@@ -2954,15 +2999,17 @@ input.search {
     h3 {
       text-transform: none;
       color: #fff;
-      display: block;
-      margin:0 0 1.5rem;
+      display: inline-block;
       text-align: center;
+      border-bottom:1px solid #fff;
       span {
         border-color: #fff;
       }
       &.text-upper {
         text-transform: uppercase;
-        margin:6rem 0 2rem;
+        margin:6rem 0 2.5rem;
+        display: block;
+        border: none;
       }
     }
     .w1170 {
