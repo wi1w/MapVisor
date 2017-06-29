@@ -4032,7 +4032,66 @@ label.h30 {
   @include transition-duration(0.7s);
   @include transition-timing-function(ease-in);
 }
-
+.hidden {
+  display: none;
+}
+#serv-check:checked ~ .tag-cloud,
+#text-check:checked ~ .text-check-box {
+  height: auto;
+}
+#serv-check:checked ~ label[for="serv-check"],
+#text-check:checked ~ label[for="text-check"] {
+  &:after {
+    content: 'Hide full description';
+  }
+  span {
+    @include transform-rotate(0deg);
+  }
+}
+#serv-check:checked ~ label[for="serv-check"]:after {
+  content: 'Less services';
+}
+label[for="text-check"],
+label[for="serv-check"] {
+  display: inline-block;
+  height: 1.6rem;
+  &:after {
+    content: 'read more';
+  }
+}
+label[for="serv-check"]:after {
+  content: 'more';
+}
+#serv-check:not(:checked) ~ .tag-cloud {
+  height: 9rem;
+}
+#text-check:not(:checked) ~ .text-check-box {
+  height: 6rem;
+}
+#serv-check:not(:checked) ~ label[for="serv-check"],
+#text-check:not(:checked) ~ label[for="text-check"] {
+  span {
+    @include transform-rotate(180deg);
+  }
+}
+label[for="serv-check"],
+label[for="text-check"] {
+  color: $greenColor;
+  cursor: pointer;
+}
+#categories-check:checked ~ .categories-check-list li:nth-child(n+10) {
+  display: inline-block;
+}
+#categories-check:checked ~ label[for="categories-check"]:after {
+  content: 'View less categories';
+}
+#categories-check:not(:checked) ~ label[for="categories-check"]:after {
+  content: 'View all categories';
+}
+#categories-check:not(:checked) ~ .categories-check-list li:nth-child(n+10),
+.categories-check-list li:nth-child(n+10) {
+  display: none;
+}
 /* custom select styles
 -----------------------------------------------------------------------------*/
 .jcf-select {
