@@ -2613,7 +2613,7 @@ input.search {
 .map-landing-box {
   background: url(../images/bg-main.jpg) center top no-repeat;
   @include background-size(cover);
-  height: 776px;
+  height: 78rem;
   text-align: center;
   padding:23rem 0 5rem;
   @extend .border-box;
@@ -2671,6 +2671,183 @@ input.search {
           text-transform: none;
         }
       }
+    }
+  }
+}
+.promo-heading {
+  max-width: 92rem;
+  padding:2rem 11rem;
+  margin:0 auto;
+  display: inline-block;
+  vertical-align: bottom;
+  text-align: center;
+  font:3.8rem $fontmMedium;
+  color: #fff;
+  @include box-sizing(border-box);
+  @include opacity(0.9);
+  @include background-image(linear-gradient(60deg, #1972c4 0%, #1982c4 100%));
+  @include border-radius(5px);
+  @include box-shadow(0.6px 0.8px 5px rgba(0, 0, 0, 0.5));
+}
+.map-app-box {
+  background:#fff url(../images/img-map-app-bg.jpg) center top no-repeat;
+  @include background-size(cover);
+  font-size: 28px;
+  text-align: center;
+  margin:0 0 6rem;
+  padding:8.5rem 0 0;
+  .heading-h3 {
+    max-width: 74rem;
+    margin:0 0 7rem;
+  }
+  .text-center img {
+    margin:0 0 -6rem -8rem;
+  }
+}
+.money-saver-box {
+  background: $whiteDarkLightColor;
+  padding:7rem 0 5rem;
+  text-align: center;
+  .heading-h2 {
+    margin-bottom:1rem;
+    display: block;
+  }
+  .heading-h3 {
+    margin-bottom:4rem;
+  }
+  .w1170 {
+    overflow: hidden;
+    max-width:120rem;
+  }
+}
+.money-saver-list {
+  text-align: center;
+  width:120rem;
+  white-space: nowrap;
+  font-size: 0;
+  li {
+    white-space: normal;
+    font-size: 1.6rem;
+    display: inline-block;
+    vertical-align: top;
+    width: 37rem;
+    @include border-radius(5px);
+    padding:2px 1.5rem;
+    margin:0 0 2.5rem;
+    .img-holder {
+      @include background-size(cover);
+      background-position: center top;
+      height:18.6rem;
+      @include border-radius(5px 5px 0px 0px);
+      text-align: right;
+      a {
+        display: block;
+        width: 100%;
+        height:100%;
+      }
+      .sale-percent {
+        background: url(../images/bg-percent.png) center top no-repeat;
+        width: 84px;
+        height: 68px;
+        display: inline-block;
+        padding:24px 0 0;
+        margin:-2px 3rem 0 0;
+        vertical-align: top;
+        font: 2.2rem $fontmMedium;
+        text-align: center;
+        color: #fff;
+      }
+    }
+    .info {
+      padding:1.5rem 1rem;
+      background: $purpleColor;
+      @include border-radius(0px 0px 5px 5px);
+      font-size:1.6rem;
+      color: $greyColor;
+      .text-item {
+        font-size:2.2rem;
+        line-height:2.6rem;
+        color: #fff;
+        display: block;
+        overflow: hidden;
+        height:5.2rem;
+        margin:0 0 1rem;
+      }
+      .price-box {
+        padding:0 3rem;
+        position: relative;
+        .icon-like {
+          position: absolute;
+          top:50%;
+          margin:-1.1rem 0 0;
+          right:0.5rem;
+          height:2.2rem;
+          color: #fff;
+        }
+        .icon-like:hover {
+          color: $greenLightColor;
+        }
+        strong {
+          color: $greenLightColor;
+          font-size:2.8rem;
+          margin:0 0 0 0.5rem;
+          span {
+            font-size:1.6rem;
+          }
+        }
+        >span {
+          color: #fff;
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}
+.content-new {
+  .map-landing-box {
+    background-image: url(../images/bg-main-upd.jpg);
+    padding:6rem 0;
+    @extend .vertical-align-holder;
+    &:after {
+      @extend  .vertical-align-content;
+      vertical-align: bottom;
+    }
+    .w1170 {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+  }
+  .advantage-box {
+    height: auto;
+    .heading-h2 {
+      color: #fff;
+    }
+  }
+  .heading-h2,
+  .heading-h3 {
+    padding:0 2rem;
+  }
+  .landing-articles {
+    .heading-h2 {
+      display: block;
+      text-align: center;
+      margin-bottom:1.2rem;
+    }
+    .heading-h3 {
+      max-width:80rem;
+      margin-bottom:3.5rem;
+    }
+    .tabs {
+      text-align: left;
+    }
+  }
+  .buttons-nav {
+    padding:0 2rem 3px;
+  }
+  .categories-box {
+    background: #fff;
+    .flaticon {
+      display: none;
     }
   }
 }

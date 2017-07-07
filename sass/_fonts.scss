@@ -170,6 +170,7 @@ $icon-google-plus-square: "\f0d4";
 $icon-google-plus: "\f0d5";
 $icon-linkedin: "\f0e1";
 
+
 @font-face {
   font-family: 'mapVisorIconFont';
   src:  url('#{$icon-font-path}/mapVisorIconFont.eot?36ym09');
@@ -200,7 +201,16 @@ $icon-linkedin: "\f0e1";
   url('#{$icon-font-path}/Helv6Medium.ttf') format('truetype'),
   url('#{$icon-font-path}/Helv6Medium.svg#Helv6Medium') format('svg');
 }
-
+@font-face {
+  font-family: 'icomoon';
+  src:  url('#{$icon-font-path}/icomoon-add.eot?x55kg5');
+  src:  url('#{$icon-font-path}/icomoon-add.eot?x55kg5#iefix') format('embedded-opentype'),
+  url('#{$icon-font-path}/icomoon-add.ttf?x55kg5') format('truetype'),
+  url('#{$icon-font-path}/icomoon-add.woff?x55kg5') format('woff'),
+  url('#{$icon-font-path}/icomoon-add.svg?x55kg5#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'mapVisorIconFont' !important;
   speak: none;
@@ -212,7 +222,12 @@ $icon-linkedin: "\f0e1";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-like {
+  font-family: 'icomoon' !important;
+}
+.icon-like:before {
+  content: "\e9773";
+}
 .icon-ic_rotate_left_black_24px {
   &:before {
     content: $icon-ic_rotate_left_black_24px;

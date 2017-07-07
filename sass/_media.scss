@@ -86,6 +86,9 @@
       }
     }
   }
+  .money-saver-box .w1170 {
+    width: 80rem;
+  }
 }
 @media only screen and (max-width: 1160px), only screen and (max-device-width: 1160px) {
   #header {
@@ -386,6 +389,12 @@
   .location-box form .check-holder {
     width: 140px;
   }
+  .promo-heading {
+    padding:2rem;
+  }
+  .money-saver-box .w1170 {
+    width: 40rem;
+  }
 }
 @media only screen and (max-width: 650px), only screen and (max-device-width: 650px) {
   .col-list.col6 li {
@@ -483,6 +492,14 @@
   }
   .popup .check-anim+label {
     display: block;
+  }
+  .content-new {
+    .heading-h2 {
+      font-size:3.5rem;
+    }
+  }
+  .promo-heading {
+    font-size:3.2rem;
   }
 }
 @media only screen and (max-width: 550px), only screen and (max-device-width: 550px) {
@@ -708,5 +725,12 @@
   #footer-nav {
     width: 100%;
     padding:20px 0 0;
+  }
+  .money-saver-box .w1170 {
+    width: 32rem;
+    padding: 0;
+  }
+  .money-saver-list li {
+    width: 30rem;
   }
 }
