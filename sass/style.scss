@@ -3225,6 +3225,9 @@ label[for="text-desc-check"] {
   &:after {
     content: 'read more';
   }
+  span {
+    @include transform-rotate(180deg);
+  }
 }
 #text-desc-check:checked ~ .text-desc {
   height: auto;
@@ -3237,7 +3240,7 @@ label[for="text-desc-check"] {
     content: 'read less';
   }
   span {
-    @include transform-rotate(180deg);
+    @include transform-rotate(0deg);
   }
 }
 #text-desc-check:not(:checked) ~ .text-desc {
@@ -3251,7 +3254,7 @@ label[for="text-desc-check"] {
     content: 'read more';
   }
   span {
-    @include transform-rotate(0deg);
+    @include transform-rotate(180deg);
   }
 }
 .text-desc {
