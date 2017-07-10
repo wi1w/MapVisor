@@ -3219,12 +3219,17 @@ input.search {
     }
   }
 }
-.text-short-desc {
-  overflow: hidden;
-  max-height:27rem;
+.text-desc {
   position: relative;
+  &.short-desc {
+    overflow: hidden;
+    height:27rem;
+    &:after {
+      display: block;
+    }
+  }
   &:after {
-    display: block;
+    display: none;
     position: absolute;
     bottom: 0;
     left: 0;
