@@ -3219,17 +3219,47 @@ input.search {
     }
   }
 }
-.text-desc {
-  position: relative;
-  &.short-desc {
-    overflow: hidden;
-    height:27rem;
-    &:after {
-      display: block;
-    }
+label[for="text-desc-check"] {
+  color: $greenColor;
+  cursor: pointer;
+  &:after {
+    content: 'read more';
   }
+}
+#text-desc-check:checked ~ .text-desc {
+  height: auto;
   &:after {
     display: none;
+  }
+}
+#text-desc-check:checked ~ label[for="text-desc-check"] {
+  &:after {
+    content: 'read less';
+  }
+  span {
+    @include transform-rotate(180deg);
+  }
+}
+#text-desc-check:not(:checked) ~ .text-desc {
+  height: 27rem;
+  &:after {
+    display: block;
+  }
+}
+#text-desc-check:not(:checked) ~ label[for="text-desc-check"] {
+  &:after {
+    content: 'read more';
+  }
+  span {
+    @include transform-rotate(0deg);
+  }
+}
+.text-desc {
+  position: relative;
+  overflow: hidden;
+  height:27rem;
+  &:after {
+    display: block;
     position: absolute;
     bottom: 0;
     left: 0;
