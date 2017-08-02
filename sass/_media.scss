@@ -1,101 +1,4 @@
-@media only screen and (max-width: 1550px), only screen and (max-device-width: 1550px) {
-  .about-box {
-    height:50rem;
-    .text-box .decor-triangle {
-      border-width:0px 25rem 50rem 0px;
-      left:-25rem;
-    }
-    > img {
-      left:0;
-    }
-  }
-}
-@media only screen and (max-width: 1400px), only screen and (max-device-width: 1400px) {
-  .arrow-up {
-    right: 1rem;
-  }
-}
-@media only screen and (max-width: 1340px), only screen and (max-device-width: 1350px) {
-  .about-box {
-    height:50rem;
-    .text-box .decor-triangle {
-      border-right-width:15rem;
-      left:-15rem;
-    }
-    > img {
-      left:-120px;
-    }
-  }
-}
-@media only screen and (max-width: 1150px), only screen and (max-device-width: 1150px) {
-  .about-box > img {
-    left:-200px;
-    min-width: 700px;
-  }
-  .reg-content .watch-pass {
-    left:auto;
-    right: 0;
-    margin: 0;
-  }
-}
-@media only screen and (max-width: 1250px), only screen and (max-device-width: 1250px) {
-  .list-column-6 li {
-    width:20%;
-  }
-  .find-pros-box .maxw1200,
-  .popular-location-box .maxw1200,
-  .search-page .footer-form-box .w1170 {
-    margin:0 1rem;
-  }
-  .landing-articles {
-    .rating-holder {
-      text-align: center;
-      .rating {
-        overflow: hidden;
-        display: inline-block;
-        vertical-align: top;
-        float: none;
-        > label:before {
-          margin:1px;
-          font-size:1.2rem;
-        }
-      }
-    }
-  }
-  .categories-box ul li,
-  .col-list.col3 li {
-    padding:0 1rem;
-  }
-  .location-popup,
-  .services-popup {
-    width: 800px;
-  }
-  .location-popup {
-    .attent-block {
-      width: auto;
-      margin:0 1.5rem 1.5rem;
-    }
-  }
-  .popup-holder {
-    .hours-box ul li {
-      .check-anim+label {
-        width:100%;
-      }
-      .select-custom:last-child {
-        margin-bottom:2.5rem;
-      }
-    }
-  }
-  .money-saver-box .w1170 {
-    width: 80rem;
-  }
-}
-@media only screen and (max-width: 1160px), only screen and (max-device-width: 1160px) {
-  #header {
-    position: relative;
-    z-index:auto;
-    border: none;
-  }
+@media only screen and (max-width: 1600px), only screen and (max-device-width: 1600px) {
   .aside-nav {
     left:-24rem;
   }
@@ -104,6 +7,11 @@
   }
   #nav-toggle-aside:not(:checked) ~ .aside-nav {
     left:-240px;
+  }
+  #header {
+    position: relative;
+    z-index:auto;
+    border: none;
   }
   .logo-holder {
     position: fixed;
@@ -176,6 +84,89 @@
     padding:8px 1rem 0 0;
     margin-top: -5px;
   }
+}
+@media only screen and (max-width: 1550px), only screen and (max-device-width: 1550px) {
+  .about-box {
+    height:50rem;
+    .text-box .decor-triangle {
+      border-width:0px 25rem 50rem 0px;
+      left:-25rem;
+    }
+    > img {
+      left:0;
+    }
+  }
+}
+@media only screen and (max-width: 1400px), only screen and (max-device-width: 1400px) {
+  .arrow-up {
+    right: 1rem;
+  }
+}
+@media only screen and (max-width: 1340px), only screen and (max-device-width: 1350px) {
+  .about-box {
+    height:50rem;
+    .text-box .decor-triangle {
+      border-right-width:15rem;
+      left:-15rem;
+    }
+    > img {
+      left:-120px;
+    }
+  }
+}
+@media only screen and (max-width: 1250px), only screen and (max-device-width: 1250px) {
+  .list-column-6 li {
+    width:20%;
+  }
+  .find-pros-box .maxw1200,
+  .popular-location-box .maxw1200,
+  .search-page .footer-form-box .w1170 {
+    margin:0 1rem;
+  }
+  .landing-articles {
+    .rating-holder {
+      text-align: center;
+      .rating {
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: top;
+        float: none;
+        > label:before {
+          margin:1px;
+          font-size:1.2rem;
+        }
+      }
+    }
+  }
+  .categories-box ul li,
+  .col-list.col3 li {
+    padding:0 1rem;
+  }
+  .location-popup,
+  .services-popup {
+    width: 800px;
+  }
+  .location-popup {
+    .attent-block {
+      width: auto;
+      margin:0 1.5rem 1.5rem;
+    }
+  }
+  .popup-holder {
+    .hours-box ul li {
+      .check-anim+label {
+        width:100%;
+      }
+      .select-custom:last-child {
+        margin-bottom:2.5rem;
+      }
+    }
+  }
+  .money-saver-box .w1170 {
+    width: 80rem;
+  }
+}
+@media only screen and (max-width: 1160px), only screen and (max-device-width: 1160px) {
   .admin-wrapper .header-form form {
     margin-top: 10px;
   }
@@ -187,6 +178,17 @@
   }
   #nav {
     padding: 0;
+  }
+}
+@media only screen and (max-width: 1150px), only screen and (max-device-width: 1150px) {
+  .about-box > img {
+    left:-200px;
+    min-width: 700px;
+  }
+  .reg-content .watch-pass {
+    left:auto;
+    right: 0;
+    margin: 0;
   }
 }
 @media only screen and (max-width: 1050px), only screen and (max-device-width: 1050px) {
@@ -551,14 +553,14 @@
     ul {
       li {
         width:100%;
-        padding: 0;
+        padding: 0 1.5rem;
         margin:0 0 3rem;
         &:first-child [class*="icon-"] {
           margin: 0 0 -2rem;
         }
       }
       .holder-icon {
-        height: auto;
+        height: 20rem;
         margin:0 0 1.5rem;
       }
     }
@@ -703,6 +705,14 @@
   .col-list.col6 li,
   .col-list.col4 li {
     width:100%;
+  }
+  .claim-bus-form .form-row-holder {
+    text-align: center;
+    .form-row {
+      margin:0 0 2rem;
+      width:100%;
+      @include box-sizing(border-box);
+    }
   }
 }
 @media only screen and (max-width: 380px), only screen and (max-device-width: 380px) {

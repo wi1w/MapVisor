@@ -2,6 +2,8 @@
 @import "compass/reset.scss";
 /* import compass variables for css3 */
 @import "compass/css3";
+/* import compass ui library */
+@import "compass/css3/user-interface";
 /*import fonts*/
 @import "fonts";
 
@@ -138,6 +140,21 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 textarea:focus, input:focus {
   outline: none;
 }
+/*cross-browser change placeholder color*/
+/*::-webkit-input-placeholder {
+  color: $greyColor;
+}
+:-ms-input-placeholder {
+  color: $greyColor;
+}
+::-moz-placeholder {
+  color: $greyColor;
+  opacity: 1;
+}
+:-moz-placeholder {
+  color: $greyColor;
+  opacity: 1;
+}*/
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
@@ -169,11 +186,54 @@ input[type="text"], input[type="email"], input[type="password"],
   box-shadow: none;
   border-radius: 0;
   font-weight: 400;
+  @include input-placeholder {
+    color: $greyColor;
+  }
   &:focus {
     background-image: linear-gradient($darkBlueColor, $darkBlueColor), linear-gradient($borderColor, $borderColor);
     background-size: 100% 2px, 100% 1px;
     box-shadow: none;
     transition-duration: 0.3s;
+  }
+}
+.input-gray-holder {
+  label,
+  .label-icon span {
+    line-height:36px;
+  }
+  .icon-sucess, .icon-error {
+    top: 9px;
+  }
+  .watch-pass {
+    top: 6px;
+  }
+  input[type="text"], input[type="email"], input[type="password"] {
+    border:1px solid $blueColor;
+    background: $greyColor !important;
+    @include border-radius(5px);
+    padding:8px 14px;
+    color: $mainColor;
+    height: 36px;
+    @include input-placeholder {
+      color: #fff !important;
+    }
+    + .placeholder {
+      color: #fff;
+    }
+    &:focus {
+      background: none;
+      @extend .shadow-blur;
+    }
+  }
+  &.error-row {
+    input[type="text"], input[type="email"], input[type="password"] {
+      border-color: $redColor;
+    }
+  }
+  &.sucess-row {
+    input[type="text"], input[type="email"], input[type="password"] {
+      border-color: $greenColor;
+    }
   }
 }
 .select-holder {
@@ -213,6 +273,7 @@ select {
     }
   }
 }
+
 .select-custom {
   position: relative;
   display: block;
@@ -300,19 +361,6 @@ textarea {
       color: $redColor;
     }
   }
-}
-/*cross-browser change placeholder color*/
-::-webkit-input-placeholder {
-  color: $greyColor;
-}
-:-ms-input-placeholder {
-  color: $greyColor;
-}
-::-moz-placeholder {
-  color: $greyColor;
-}
-:-moz-placeholder {
-  color: $greyColor;
 }
 .label-icon {
   position: absolute;
@@ -402,6 +450,9 @@ h3 {
 }
 .icon-error {
   color: $redColor;
+}
+.black {
+  color: $mainColor;
 }
 .text-upper {
   text-transform: uppercase;
@@ -1361,6 +1412,7 @@ input.search {
 .add-image {
   position: relative;
   display: block;
+  text-align: center;
   &:after {
     content: '';
     position: absolute;
@@ -1370,13 +1422,21 @@ input.search {
     left: 0;
     border:1px solid $greyColor;
   }
-  [class^="icon"] {
+  [class^="icon"], em {
     position: absolute;
-    top: 50%;
-    left:50%;
-    font-size:2rem;
-    margin:-1rem 0 0 -1rem;
+    top: 1rem;
+    left: 0;
+    right: 0;
+  }
+  [class^="icon"] {
+    font-size:1.6rem;
     z-index:1;
+  }
+  em {
+    font-style: normal;
+    font-size: 1.2rem;
+    line-height: 1;
+    top: 3rem;
   }
 }
 .hours-box.tooltip-box {
@@ -1437,9 +1497,13 @@ input.search {
     font-size:2.2rem;
     background: $blueColor;
     @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
-    padding:0.8rem 2rem;
+    padding:0.8rem 5.5rem 0.8rem 2rem;
     color: #fff;
     @include border-radius(5px 5px 0 0);
+    height:3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
     &.text-upper {
       text-transform: uppercase;
       text-align: center;
@@ -1449,13 +1513,27 @@ input.search {
       color: #fff;
       float: left;
       margin:0 1.4rem 0 0;
+      &:first-child {
+        display: inline-block;
+        width:100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+      }
       &:hover {
         color: $borderColor;
       }
       &.fr {
         cursor: pointer;
         float: right;
-        margin:0 -10px 0 8px;
+        margin:-2rem 0 0;
+        position: absolute;
+        top:50%;
+        right:0.85rem;
+        &:nth-last-child(2) {
+          right:3rem;
+        }
       }
     }
     [class^="icon"] {
@@ -1532,6 +1610,9 @@ input.search {
       margin-right:0.5rem;
     }
   }
+}
+.popup .content-box {
+  border: none;
 }
 .articles-list {
   .content-box .heading [class^="icon"] {
@@ -1647,6 +1728,10 @@ input.search {
     text-align: center;
     margin: 0;
     @include box-shadow(0 0 0 rgba(0, 0, 0, 0));
+  }
+  &.content-box {
+    @include box-shadow(0 1px 4px rgba(25, 130 ,196, 0.9));
+    border:1px solid $blueColor;
   }
 }
 .nav-tab {
@@ -2215,7 +2300,10 @@ input.search {
   .heading {
     height: 4rem;
     line-height:4rem;
-    padding:0.2rem 2rem;
+    padding:0.2rem 5.5rem 0.2rem 2rem;
+  }
+  .content-box {
+    border: none;
   }
   .map-box {
     height:24rem;
@@ -2287,7 +2375,7 @@ input.search {
     }
   }
   >span, >div {
-    color: $greyDarkColor;
+    color: $redColor !important;
     display: table-cell;
     vertical-align: middle;
   }
@@ -2801,7 +2889,7 @@ input.search {
 .content-new {
   .map-landing-box {
     background-image: url(../images/bg-main-upd.jpg);
-    padding:6rem 0;
+    padding:6rem 0 0;
     @extend .vertical-align-holder;
     &:after {
       @extend  .vertical-align-content;
@@ -3338,7 +3426,10 @@ label[for="text-desc-check"] {
     font-size: 0;
     .holder-icon {
       display: inline-block;
-      height:16rem;
+      height:20rem;
+      width:100%;
+      background: url(../images/img-reg01.jpg) center center no-repeat;
+      @include background-size(cover);
     }
     [class*="icon-"] {
       display: block;
@@ -3346,12 +3437,23 @@ label[for="text-desc-check"] {
       vertical-align: top;
     }
     li {
-      font-size:1.6rem;
+      font-weight: bold;
+      font-size:1.7rem;
       display: inline-block;
       vertical-align: top;
       width:33.3%;
       @extend .border-box;
       padding:0 1.5rem;
+      &:nth-child(2) .holder-icon {
+        background-image: url(../images/img-reg02.jpg);
+      }
+      &:last-child .holder-icon {
+        background-image: url(../images/img-reg03.jpg);
+      }
+      img {
+        height:20rem;
+        width:100%;
+      }
       p {
         text-align: left;
       }
@@ -3478,10 +3580,10 @@ label.h30 {
     @include border-radius(5px 5px 0px 0px);
     position: relative;
     z-index: 1;
-    background: #fff;
+    background: $greyLightColor;
     margin:0 -1px;
     input[type="text"] {
-      background: none;
+      background: none !important;
       @include border-radius(5px 5px 0px 0px);
       padding:1.2rem 4rem 1.2rem 1.5rem;
       height: auto;
@@ -3615,6 +3717,33 @@ label.h30 {
     .holder {
       border-color: $yellowDarkColor;
       border-left-color:transparent;
+    }
+  }
+  &.gray {
+    &:before {
+      background: $greyColor;
+    }
+  }
+  &.orange {
+    &:before {
+      background: #ed7d31;
+    }
+  }
+  &.custom {
+    border:2px solid $yellowDarkColor;
+    background: $lightBlueColor;
+    .name-block .name-block-holder strong {
+      color: #fff;
+    }
+    .info-block {
+      color: $yellowDarkColor;
+    }
+    .holder {
+      border: none;
+      background: $lightBlueColor;
+    }
+    &:before {
+      display: none;
     }
   }
   &:before {
@@ -4387,6 +4516,10 @@ label[for="text-check"] {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.select-bold .jcf-select-text {
+  font-weight: bold;
+  color: $mainColor;
+}
 .jcf-select .jcf-select-opener {
   background: none;
   width:2.4rem;
@@ -4499,6 +4632,91 @@ body > .jcf-select-drop,
 }
 .jcf-scrollbar-horizontal {
   display: none;
+}
+
+label[for="categories-top"],
+label[for="popular-locations"],
+label[for="services-check"] {
+  cursor: pointer;
+  color: #1982c4;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+label[for="categories-top"]:hover,
+label[for="popular-locations"]:hover,
+label[for="services-check"]:hover {
+  text-decoration: none;
+}
+label[for="popular-locations"] {
+  color: #000;
+}
+label[for="categories-top"]:after,
+label[for="popular-locations"]:after,
+label[for="services-check"]:after {
+  content: 'Load more';
+}
+#categories-top:checked ~ label[for="categories-top"]:after,
+#popular-locations:checked ~ label[for="popular-locations"]:after,
+#services-check:checked ~ label[for="services-check"]:after {
+  content: 'View less categories';
+}
+#categories-top:not(:checked) ~ label[for="categories-top"]:after,
+#popular-locations:not(:checked) ~ label[for="popular-locations"]:after,
+#services-check:not(:checked) ~ label[for="services-check"]:after {
+  content: 'Load more';
+}
+#categories-top:not(:checked) ~ .categories-top-list li:nth-child(n+19), .categories-top-list li:nth-child(n+19),
+#popular-locations:not(:checked) ~ .popular-locations-list li:nth-child(n+19), .popular-locations-list li:nth-child(n+19),
+#services-check:not(:checked) ~ .services-list li:nth-child(n+13), .services-list li:nth-child(n+13) {
+  display: none;
+}
+#categories-top:checked ~ .categories-top-list li:nth-child(n+19),
+#popular-locations:checked ~ .popular-locations-list li:nth-child(n+19),
+#services-check:checked ~ .services-list li:nth-child(n+13) {
+  display: inline-block;
+}
+.services-box-holder {
+  text-align: center;
+  padding:2rem 1.5rem;
+}
+.services-box-holder .w1170 {
+  overflow: hidden;
+  padding: 0;
+}
+.search-page .subcategory-box {
+  padding:0 0 4.5rem;
+  background: none;
+}
+.search-page .subcategory-box .heading-h2,
+.search-page .subcategory-box .heading-h3 {
+  margin:0 0 2.5rem;
+}
+.subcategory-box .col-list,
+.services-box-holder .col-list {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.claim-bus-form {
+  max-width: 400px;
+  margin:0 auto;
+  .form-row-holder {
+    text-align: left;
+    margin:0 0 2rem;
+    .form-row, .btn {
+      @extend .vertical-align;
+      float: none;
+    }
+    .form-row {
+      width:24rem;
+      margin:0 1rem 0 0;
+    }
+  }
+}
+.tabs-box {
+  .articles-list .content-box {
+    background: $greyLightColor;
+  }
 }
 /* media queries styles
 -----------------------------------------------------------------------------*/
