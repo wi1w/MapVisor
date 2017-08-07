@@ -620,6 +620,9 @@ h3 {
   &.blue-btn {
     background: $blueColor;
   }
+  &.red-btn {
+    background: $redColor;
+  }
   &.grey-btn {
     text-transform: none;
     background: #dcdcdc;
@@ -2364,15 +2367,15 @@ input.search {
   position: relative;
   display: table;
   width:100%;
-  &.save {
+  &.finish-top {
     margin:3rem auto -3rem;
-    .btn {
+    /*.btn {
       padding-left: 3rem;
       background-image: url(../images/save.svg);
       background-repeat:no-repeat;
       background-size:1.9rem 1.9rem;
       background-position: 0.5rem 41%;
-    }
+    }*/
   }
   >span, >div {
     color: $redColor !important;
@@ -3569,9 +3572,12 @@ label.h30 {
     top: -1px;
   }
   a {
-    color: $greyDarkColor;
+    color: $mainColor;
     &:hover {
-      color: $hoverGrayIco;
+      color: $greyDarkColor;
+    }
+    [class^="icon-"] {
+      color: $greyDarkColor;
     }
   }
   .input-holder {
@@ -3589,6 +3595,9 @@ label.h30 {
       height: auto;
       line-height:2.3rem;
       font-size:1.6rem;
+      @include input-placeholder {
+        color: $mainColor;
+      }
       &:focus {
         @include box-shadow(0 0 8px rgba(25, 130, 196, 0.5));
       }

@@ -544,6 +544,19 @@
   .address-box .map iframe {
     height: 390px;
   }
+  .attent-block {
+    height: auto;
+    display: block;
+    &.finish-top,
+    &.finish {
+      .btn-holder {
+        display: block;
+        width:100%;
+        text-align: center;
+        padding:1rem 1rem 0;
+      }
+    }
+  }
 }
 @media only screen and (max-width: 500px), only screen and (max-device-width: 500px) {
   .col-list.col6 li {
